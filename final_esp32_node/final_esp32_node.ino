@@ -11,8 +11,9 @@ struct Packet {
   char timestamp[20];
 }; 
 
-const char WIFI_SSID[] = "Shrimp";
-const char WIFI_PASSWORD[] = "lunchtime";
+// REPLACE WITH YOUR WIFI
+const char WIFI_SSID[] = "";
+const char WIFI_PASSWORD[] = "";
 
 const char* ntpServer = "pool.ntp.org";
 const long  gmtOffset_sec = -8 * 3600;
@@ -22,10 +23,7 @@ struct tm timeinfo;
 esp_now_peer_info_t peerInfo;
 
 // REPLACE WITH YOUR RECEIVER MAC Address
-// 24:6F:28:7A:93:44 esp32 labeled '2'
-// 94:3C:C6:34:6E:68 esp32 unlabeled
 uint8_t broadcastAddress[] = {0x94, 0x3C, 0xC6, 0x34, 0x6E, 0x68};
-// uint8_t broadcastAddress[] = {0x24, 0x6F, 0x28, 0x7A, 0x93, 0x44};
 
 // buffer for sending packets
 uint8_t data[Packet::length];
